@@ -1,15 +1,16 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      animation: {
-        'loop-scroll': 'loop-scroll 50s linear infinite',
-      },
       keyframes: {
-        'loop-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
+        'scroll-loop': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }, 
         },
+      },
+      animation: {
+        'loop-scroll': 'scroll-loop 20s linear infinite',
       },
     },
   },

@@ -17,7 +17,7 @@ export default function Navbar() {
   const [active, setActive] = useState('HOME');
 
   return (
-    <header className="fixed top-0 z-50 w-full">
+    <header className="fixed top-0 z-99999 w-full">
 
       {/* ===== Main Navbar ===== */}
       <nav className="bg-white shadow-sm">
@@ -34,7 +34,7 @@ export default function Navbar() {
           </Link>
 
           {/* Menu */}
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
