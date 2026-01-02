@@ -1,47 +1,73 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const brands = () => {
-  const brands = [
-    { src: 'excel.png', width: 160, height: 48 },
-    { src: 'zoho.svg', width: 160, height: 48 },
-    { src: 'odoo.png', width: 160, height: 48 },
-    { src: 'xerox.png', width: 160, height: 48 },
-    { src: 'quickbook.png', width: 160, height: 48 },
-  ];
+interface Brand {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+}
 
-  const BrandImages = () => (
-    <div className="flex flex-shrink-0 items-center justify-center space-x-10 md:space-x-16">
-      {brands.map((brand, index) => (
-        <div
-          key={index}
-          className="flex flex-shrink-0 items-center justify-center"
-        >
-          <Image
-            src={`/brands/${brand.src}`}
-            alt="brand"
-            width={brand.width}
-            height={brand.height}
-          />
-        </div>
-      ))}
-    </div>
-  );
+interface BrandsProps {
+  brandList?: Brand[];
+  speed?: number;
+}
+
+const defaultBrands: Brand[] = [
+  { src: 'excel.png', width: 160, height: 48, alt: 'Excel' },
+  { src: 'zoho.svg', width: 160, height: 48, alt: 'Zoho' },
+  { src: 'odoo.png', width: 160, height: 48, alt: 'Odoo' },
+  { src: 'xerox.png', width: 160, height: 48, alt: 'Xerox' },
+  { src: 'quickbook.png', width: 160, height: 48, alt: 'QuickBooks' },
+];
+
+const Brands: React.FC<BrandsProps> = ({
+  brandList = defaultBrands,
+  speed = 20,
+}) => {
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure the animation container only renders on the client
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <section className="pb-[70px] text-center font-medium md:w-[768px] lg:w-[1024px] xl:w-[1440px] ">
-      <p className="xs:pt-2 text-gray-600 md:pt-6">
+    <section className="max-w-[1440px] px-4 pb-16 text-center font-medium">
+      <p className="pt-2 text-gray-600 md:pt-6">
         Join us and BookSwiftPros will handle your books with precision.
       </p>
 
-      <div className="relative overflow-hidden">
-        {/* Animated container */}
-        <div className="animate-scroll flex">
-          <BrandImages />
-          <BrandImages />
-        </div>
+      <div className="relative mt-8 overflow-hidden">
+        {mounted && (
+          <div
+            className="animate-scroll flex gap-10"
+            style={{
+              animation: `scroll ${speed}s linear infinite`,
+            }}
+          >
+            {[...brandList, ...brandList].map((brand, idx) => (
+              <div
+                key={idx}
+                className="flex flex-shrink-0 items-center justify-center"
+              >
+                <Image
+                  src={`/brands/${brand.src}`}
+                  alt={brand.alt || 'Brand'}
+                  width={brand.width}
+                  height={brand.height}
+                  priority
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
+      {/* Tailwind animation keyframes */}
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -53,13 +79,15 @@ const brands = () => {
         }
 
         .animate-scroll {
-          display: flex;
           width: max-content;
-          animation: scroll 10s linear infinite;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
   );
 };
 
-export default brands;
+export default Brands;
