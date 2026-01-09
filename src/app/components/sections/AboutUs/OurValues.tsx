@@ -1,17 +1,17 @@
 import React from 'react';
-import { keyValuePropositions } from '../data/PropositionsData';
-import Card from './Card';
+import { Values } from '../../data/value';
+import ValueCard from './ValueCard';
 
-const KeyValuePropositions = () => {
+const OurValues = () => {
   return (
     <section className="mx-auto">
       <h2 className="mb-12 text-center text-4xl font-semibold text-gray-900">
-        Key Value Propositions
+        Our Values
       </h2>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {keyValuePropositions.map((item, index) => (
-          <Card
+        {Values.map((item, index) => (
+          <ValueCard
             key={index}
             icon={item.icon}
             title={item.title}
@@ -23,4 +23,4 @@ const KeyValuePropositions = () => {
   );
 };
 
-export default KeyValuePropositions;
+export default OurValues;

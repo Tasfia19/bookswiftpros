@@ -1,12 +1,12 @@
 'use client';
 
-import HeroImageSlider from "./HeroImageSlider";
+import HeroImageSlider from './HeroImageSlider';
 
 const HeroSection = () => {
   return (
     <section className="flex w-full items-center justify-between">
       <div className="flex flex-col">
-        <div className="flex items-center justify-center flex-col text-center">
+        <div className="flex flex-col items-center justify-center text-center">
           <h1 className="text-4xl leading-normal font-bold text-gray-900 md:text-5xl">
             Numbers Made Simple Decisions Made Smarter
           </h1>
@@ -20,7 +20,7 @@ const HeroSection = () => {
           <button className="rounded-xl bg-[#EEF4FA] px-12 py-4 hover:bg-blue-100">
             Book a Free Consultation
           </button>
-          <button className="py-4 hover:bg-blue-100 rounded-xl border px-12">
+          <button className="rounded-xl border px-12 py-4 hover:bg-blue-100">
             Explore Pricing Plans
           </button>
         </div>

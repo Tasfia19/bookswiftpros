@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image  from 'next/image';
-import React from 'react'
-import SocialMedia from './SocialMedia'
+import Image from 'next/image';
+import React from 'react';
+import SocialMedia from '../sections/Home/SocialMedia';
 
 const Footer = () => {
   return (

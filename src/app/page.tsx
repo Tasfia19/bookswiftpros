@@ -1,18 +1,15 @@
 'use client';
-import Brands from './components/sections/Brands';
-import Feedback from './components/sections/Feedback';
-import HeroSection from './components/sections/HeroSection';
-import Navbar from './components/sections/Navbar';
-import OurPromise from './components/sections/OurPromise';
-import KeyValuePropositions from './components/sections/Propositions';
-import Serve from './components/sections/Serve';
-import Services from './components/sections/Services';
-import Footer from './components/sections/Footer';
+import Brands from './components/sections/Home/Brands';
+import Feedback from './components/sections/Home/Feedback';
+import HeroSection from './components/sections/Home/HeroSection';
+import OurPromise from './components/sections/Home/OurPromise';
+import KeyValuePropositions from './components/sections/Home/Propositions';
+import Services from './components/sections/Home/Services';
+import Serve from './components/sections/Home/Serve';
 
 export default function Home() {
   return (
     <div className="w-full">
-      <Navbar />
       <section className="container mx-auto mt-[150px] w-full pt-11 pb-16">
         <HeroSection />
         <div className="mt-40">
@@ -34,9 +31,6 @@ export default function Home() {
           <Feedback />
         </div>
       </section>
-      <div className="mt-16">
-        <Footer />
-      </div>
     </div>
   );
 }

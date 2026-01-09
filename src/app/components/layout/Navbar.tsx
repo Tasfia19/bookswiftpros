@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const navLinks = [
-  { name: 'HOME', href: '#home' },
-  { name: 'ABOUT', href: '#about' },
-  { name: 'SERVICES', href: '#services' },
-  { name: 'PRICING', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'CONTACT', href: '#contact' },
+  { name: 'HOME', href: '/' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'SERVICES', href: '/services' },
+  { name: 'PRICING', href: '/pricing' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'CONTACT', href: '/contact' },
 ];
 
 export default function Navbar() {
