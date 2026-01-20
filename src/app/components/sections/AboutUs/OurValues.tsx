@@ -4,12 +4,12 @@ import ValueCard from './ValueCard';
 
 const OurValues = () => {
   return (
-    <section className="mx-auto">
+    <section className="mx-auto max-w-full">
       <h2 className="mb-12 text-center text-4xl font-semibold text-gray-900">
         Our Values
       </h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {Values.map((item, index) => (
           <ValueCard
             key={index}

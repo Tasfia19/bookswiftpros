@@ -7,17 +7,17 @@ interface ValueCardProps {
 }
 const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex h-[300px] w-[400px] flex-col items-center justify-start rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition hover:shadow-2xl">
-      <Image src={icon} alt={title} width={40} height={40} className="mb-4" />
+    <div className="flex flex-col items-center rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition hover:shadow-2xl">
+      <div className="mb-5">
+        <Image src={icon} alt={title} width={40} height={40} />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
 
-      <h3 className="mb-4 text-lg font-semibold text-gray-900">{title}</h3>
-
-      <p className="text-sm leading-relaxed text-gray-600">
+      <p className="mt-3 text-sm leading-relaxed text-gray-600">
         {description}
       </p>
     </div>
   );
 };
-
 
 export default ValueCard;

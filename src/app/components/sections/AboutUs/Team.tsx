@@ -5,14 +5,14 @@ const Team = () => {
   return (
     <section className="bg-white py-20">
       {/* Heading */}
-      <h2 className="mb-16 text-center font-serif text-5xl font-normal text-gray-900">
+      <h2 className="mb-16 text-center text-5xl font-normal text-gray-900">
         Meet the Team
       </h2>
 
       {/* Cards */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 md:grid-cols-3">
         {/* Card 1 */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition hover:shadow-xl">
+        <div className="h-[400px] w-[380px] rounded-2xl border border-gray-200 bg-white shadow-md transition hover:shadow-xl">
           <div className="relative mb-6 h-[220px] w-full overflow-hidden rounded-xl">
             <Image
               src="/AboutUS/team1.png"
@@ -32,7 +32,7 @@ const Team = () => {
         </div>
 
         {/* Card 2 (Highlighted) */}
-        <div className="rounded-2xl border border-gray-300 bg-white p-6 shadow-lg ring-2 ring-gray-300 transition hover:shadow-2xl">
+        <div className="h-[400px] w-[380px] rounded-2xl border border-gray-200 bg-white shadow-md transition hover:shadow-xl">
           <div className="relative mb-6 h-[220px] w-full overflow-hidden rounded-xl">
             <Image
               src="/AboutUS/team2.png"
@@ -52,7 +52,7 @@ const Team = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition hover:shadow-xl">
+        <div className="h-[400px] w-[380px] rounded-2xl border border-gray-200 bg-white shadow-md transition hover:shadow-xl">
           <div className="relative mb-6 h-[220px] w-full overflow-hidden rounded-xl">
             <Image
               src="/AboutUS/team3.png"
